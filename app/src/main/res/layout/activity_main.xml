@@ -9,7 +9,7 @@
 
     <EditText
         android:id="@+id/txt_num1"
-        android:layout_width="297dp"
+        android:layout_width="290dp"
         android:layout_height="55dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="48dp"
@@ -19,7 +19,7 @@
         android:inputType="number"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.306"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,14 +28,14 @@
         android:layout_width="293dp"
         android:layout_height="51dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="@string/numero2_String"
         android:inputType="number"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintHorizontal_bias="0.294"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_num1" />
 
@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
-        android:onClick="calcular_cb"
+        android:onClick="calcular_sp"
         android:text="@string/button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
@@ -148,7 +148,7 @@
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="190dp"
-        android:layout_height="26dp"
+        android:layout_height="35dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"

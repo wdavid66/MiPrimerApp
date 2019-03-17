@@ -3,9 +3,11 @@ package com.example.miprimerapp;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView res;
     private RadioButton rb_sumar,rb_restar,rb_multi,rb_divi;
     private CheckBox cb_suma , cb_resta , cb_multi , cb_divi;
+    private Spinner spinner1;
 
 
     @Override
@@ -24,20 +27,65 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Obtencion de datos Basicos y Muestra de datos
         num1 = (EditText)findViewById(R.id.txt_num1);
         num2 = (EditText)findViewById(R.id.txt_num2);
         res = (TextView)findViewById(R.id.txt_resultado);
 
+        //RadioButton
         rb_sumar =  (RadioButton)findViewById(R.id.rb_sumar);
         rb_restar =  (RadioButton)findViewById(R.id.rb_restar);
         rb_multi =  (RadioButton)findViewById(R.id.rb_multiplicar);
         rb_divi =  (RadioButton)findViewById(R.id.rb_dividir);
 
+        //CheckBox
         cb_suma = (CheckBox)findViewById(R.id.cb_suma);
         cb_resta = (CheckBox)findViewById(R.id.cb_rest);
         cb_multi = (CheckBox)findViewById(R.id.cb_multi);
         cb_divi = (CheckBox)findViewById(R.id.cb_divi);
 
+        //Spinner -- DropDown
+        spinner1 = (Spinner)findViewById(R.id.spinner);
+        String [] opciones = {"Sumar" , "Restar" , "Multiplicar" , "Dividir"};
+        ArrayAdapter <String> adapter  = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, opciones);
+        spinner1.setAdapter(adapter);
+
+    }
+
+    //Metodo del Boton
+    public void calcular_sp(View view){
+        String valor1_String = num1.getText().toString();
+        String valor2_String = num2.getText().toString();
+
+        int num1_int =  Integer.parseInt(valor1_String);
+        int num2_int =  Integer.parseInt(valor2_String);
+
+        String seleccion = spinner1.getSelectedItem().toString();
+
+        if(seleccion.equals("Sumar")){
+            int suma = num1_int + num2_int;
+            String resultado = String.valueOf(suma);
+            res.setText(resultado);
+        }
+        else if(seleccion.equals("Resta")){
+            int rest = num1_int - num2_int;
+            String resultado = String.valueOf(rest);
+            res.setText(resultado);
+        }
+        else if(seleccion.equals("Multiplicar")){
+            int multi = num1_int * num2_int;
+            String resultado = String.valueOf(multi);
+            res.setText(resultado);
+        }
+        else if(seleccion.equals("Dividir")){
+            if (num2_int != 0){
+                int divi = num1_int / num2_int;
+                String resultado = String.valueOf(divi);
+                res.setText(resultado);
+            }else{
+                Toast.makeText(this, "El segundo Numero debe ser diferente de 0", Toast.LENGTH_LONG).show();
+            }
+        }
 
     }
 
