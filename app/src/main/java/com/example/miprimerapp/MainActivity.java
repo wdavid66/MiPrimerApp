@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
             String resultado = String.valueOf(suma);
             res.setText(resultado);
         }
-        else if(seleccion.equals("Resta")){
+        else if(seleccion.equals("Restar")){
             int rest = num1_int - num2_int;
             String resultado = String.valueOf(rest);
             res.setText(resultado);

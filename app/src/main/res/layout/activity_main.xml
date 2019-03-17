@@ -105,23 +105,17 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="8dp"
         android:text="@string/cb_sumar"
-        app:layout_constraintEnd_toStartOf="@+id/cb_multi"
-        app:layout_constraintHorizontal_bias="0.176"
         app:layout_constraintStart_toEndOf="@+id/radioGroup"
         app:layout_constraintTop_toBottomOf="@+id/txt_num2" />
 
     <CheckBox
         android:id="@+id/cb_rest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="90dp"
+        android:layout_height="35dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="8dp"
         android:text="@string/cb_restar"
-        app:layout_constraintEnd_toStartOf="@+id/cb_divi"
-        app:layout_constraintHorizontal_bias="0.108"
         app:layout_constraintStart_toEndOf="@+id/radioGroup"
         app:layout_constraintTop_toBottomOf="@+id/cb_suma" />
 
@@ -129,10 +123,13 @@
         android:id="@+id/cb_multi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="56dp"
         android:text="@string/cb_multi"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/cb_suma"
         app:layout_constraintTop_toBottomOf="@+id/txt_num2" />
 
     <CheckBox
@@ -140,20 +137,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="80dp"
+        android:layout_marginEnd="180dp"
         android:text="@string/cb_dividir"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cb_multi" />
+        app:layout_constraintTop_toBottomOf="@+id/cb_rest" />
 
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="190dp"
         android:layout_height="35dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.751"
+        app:layout_constraintHorizontal_bias="0.77"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cb_divi" />
 
