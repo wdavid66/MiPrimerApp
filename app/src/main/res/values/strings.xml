@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Mi Primer App</string>
+    <string name="numero1_String">Ingrese el Primer Numero</string>
+    <string name="numero2_String">Ingrese el Segundo Numero</string>
+    <string name="resultado">Resultado</string>
+    <string name="button">Calcular</string>
+    <string name="rb_sumar">Sumar</string>
+    <string name="rb_restar">Restar</string>
+    <string name="rb_multi">Multiplicar</string>
+    <string name="rb_dividir">Dividir</string>
+    <string name="cb_sumar">Sumar</string>
+    <string name="cb_restar">Restar</string>
+    <string name="cb_multi">Multiplicar</string>
+    <string name="cb_dividir">Dividir</string>
+</resources>
