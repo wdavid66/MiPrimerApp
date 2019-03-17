@@ -3,9 +3,11 @@ package com.example.miprimerapp;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -16,17 +18,21 @@ import org.w3c.dom.Text;
 public class MainActivity extends AppCompatActivity {
 
     private EditText num1,num2;
-    private TextView res;
+    private TextView res ,tv1;
     private RadioButton rb_sumar,rb_restar,rb_multi,rb_divi;
     private CheckBox cb_suma , cb_resta , cb_multi , cb_divi;
     private Spinner spinner1;
+    private ListView lv1;
 
+    private String nombres [] = {"Samuel" , "Valentina" ,"Santiago" ,"Alejandro" ,"Valeria" ,"Benjamin"
+    ,"Gerardo"};
+    private String edades [] = {"18" , "25" , "32" ,"17", "24" ,"20","27"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+/*
         //Obtencion de datos Basicos y Muestra de datos
         num1 = (EditText)findViewById(R.id.txt_num1);
         num2 = (EditText)findViewById(R.id.txt_num2);
@@ -49,10 +55,25 @@ public class MainActivity extends AppCompatActivity {
         String [] opciones = {"Sumar" , "Restar" , "Multiplicar" , "Dividir"};
         ArrayAdapter <String> adapter  = new ArrayAdapter<String>(this, R.layout.spinner_item_guicho, opciones);
         spinner1.setAdapter(adapter);
+*/
+        //ListView
+
+        tv1=(TextView)findViewById(R.id.tv1);
+        lv1 = (ListView)findViewById(R.id.lv1);
+
+        ArrayAdapter <String> adapter = new ArrayAdapter<>(this, R.layout.list_item_guicho, nombres);
+        lv1.setAdapter(adapter);
+
+        lv1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                tv1.setText("La edad de "+lv1.getItemAtPosition(position) +" es "+edades[position]+" años");
+            }
+        });
 
     }
 
-    //Metodo del Boton
+  /*  //Metodo del Boton
     public void calcular_sp(View view){
         String valor1_String = num1.getText().toString();
         String valor2_String = num2.getText().toString();
@@ -216,4 +237,5 @@ public class MainActivity extends AppCompatActivity {
 
         res.setText(result);
     }
+*/
 }

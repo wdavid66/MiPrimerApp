@@ -12,4 +12,5 @@
     <string name="cb_restar">Restar</string>
     <string name="cb_multi">Multiplicar</string>
     <string name="cb_dividir">Dividir</string>
+    <string name="TextView">Selecciona un nombre</string>
 </resources>
