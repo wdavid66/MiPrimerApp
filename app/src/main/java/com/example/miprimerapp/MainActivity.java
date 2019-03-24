@@ -18,7 +18,7 @@ import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText num1,num2;
+    private EditText num1,num2 , et1;
     private TextView res ,tv1;
     private RadioButton rb_sumar,rb_restar,rb_multi,rb_divi;
     private CheckBox cb_suma , cb_resta , cb_multi , cb_divi;
@@ -72,14 +72,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 */
+
+        et1 = (EditText)findViewById(R.id.et1);
     }
 
-    //Metodo Boton Siguiente
+    //Metodo Boton Enviar
 
-    public void Siguiente(View view){
-        Intent siguiente = new Intent(this , SegundoActivity.class);
-        startActivity(siguiente);
+    public void Enviar(View view){
+        Intent enviar = new Intent(this , SegundoActivity.class);
+        enviar.putExtra("dato", et1.getText().toString());
+        startActivity(enviar);
     }
+
+
 
 
   /*  //Metodo del Boton
