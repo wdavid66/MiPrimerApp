@@ -1,15 +1,16 @@
 <resources>
 
     <string name="app_name">Aprendiendo Android</string>
-
-    <string name="btnEnviar">Enviar</string>
-    <string name="etNombre">Escriba un nombre</string>
-    <string name="etNombre2">Nombre</string>
+    <string name="edEmail">Introduce tu Email</string>
+    <string name="btnGuardar">Guardar</string>
     <string name="btnAnterior">Regresar</string>
+    <string name="etNombre2">Nombre</string>
 
 
     <!--
-     <string name="btnSiguiente">Siguiente</string>
+    <string name="btnEnviar">Enviar</string>
+    <string name="etNombre">Escriba un nombre</string>
+    <string name="btnSiguiente">Siguiente</string>
     <string name="numero1_String">Ingrese el Primer Numero</string>
     <string name="numero2_String">Ingrese el Segundo Numero</string>
     <string name="resultado">Resultado</string>

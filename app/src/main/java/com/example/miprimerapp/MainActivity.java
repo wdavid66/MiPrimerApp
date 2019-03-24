@@ -1,6 +1,8 @@
 package com.example.miprimerapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,16 +20,18 @@ import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
+    private EditText edEmail;
+    /*
     private EditText num1,num2 , et1;
     private TextView res ,tv1;
     private RadioButton rb_sumar,rb_restar,rb_multi,rb_divi;
     private CheckBox cb_suma , cb_resta , cb_multi , cb_divi;
     private Spinner spinner1;
     private ListView lv1;
-
     private String nombres [] = {"Samuel" , "Valentina" ,"Santiago" ,"Alejandro" ,"Valeria" ,"Benjamin"
     ,"Gerardo"};
     private String edades [] = {"18" , "25" , "32" ,"17", "24" ,"20","27"};
+    */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,13 +75,25 @@ public class MainActivity extends AppCompatActivity {
                 tv1.setText("La edad de "+lv1.getItemAtPosition(position) +" es "+edades[position]+" años");
             }
         });
+         et1 = (EditText)findViewById(R.id.et1);
 */
 
-        et1 = (EditText)findViewById(R.id.et1);
+        edEmail = (EditText)findViewById(R.id.edEmail);
+        SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
+        edEmail.setText(preferences.getString("mail" , ""));
+    }
+    //Metodo para guardar
+
+    public void guardar (View view){
+        SharedPreferences preferencias = getSharedPreferences("datos" , Context.MODE_PRIVATE);
+        SharedPreferences.Editor Ob_editor = preferencias.edit();
+        Ob_editor.putString("mail", edEmail.getText().toString());
+        Ob_editor.commit();
+        finish();
     }
 
     //Metodo Boton Enviar
-
+/*
     public void Enviar(View view){
         Intent enviar = new Intent(this , SegundoActivity.class);
         enviar.putExtra("dato", et1.getText().toString());
@@ -87,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-  /*  //Metodo del Boton
+   //Metodo del Boton
     public void calcular_sp(View view){
         String valor1_String = num1.getText().toString();
         String valor2_String = num2.getText().toString();
