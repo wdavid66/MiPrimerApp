@@ -1,5 +1,6 @@
 package com.example.miprimerapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -57,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         spinner1.setAdapter(adapter);
 */
         //ListView
-
+/*
         tv1=(TextView)findViewById(R.id.tv1);
         lv1 = (ListView)findViewById(R.id.lv1);
 
@@ -70,8 +71,16 @@ public class MainActivity extends AppCompatActivity {
                 tv1.setText("La edad de "+lv1.getItemAtPosition(position) +" es "+edades[position]+" años");
             }
         });
-
+*/
     }
+
+    //Metodo Boton Siguiente
+
+    public void Siguiente(View view){
+        Intent siguiente = new Intent(this , SegundoActivity.class);
+        startActivity(siguiente);
+    }
+
 
   /*  //Metodo del Boton
     public void calcular_sp(View view){

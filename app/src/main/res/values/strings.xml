@@ -1,5 +1,15 @@
 <resources>
-    <string name="app_name">Mi Primer App</string>
+
+    <string name="app_name">Aprendiendo Android</string>
+
+    <string name="btnEnviar">Enviar</string>
+    <string name="etNombre">Escriba un nombre</string>
+    <string name="etNombre2">Nombre</string>
+    <string name="btnAnterior">Anterior</string>
+
+
+    <!--
+     <string name="btnSiguiente">Siguiente</string>
     <string name="numero1_String">Ingrese el Primer Numero</string>
     <string name="numero2_String">Ingrese el Segundo Numero</string>
     <string name="resultado">Resultado</string>
@@ -12,5 +22,8 @@
     <string name="cb_restar">Restar</string>
     <string name="cb_multi">Multiplicar</string>
     <string name="cb_dividir">Dividir</string>
-    <string name="TextView">Selecciona un nombre</string>
+    <string name="tv2">Segundo Activity</string>
+    <string name="tv1">Primer Activity</string>
+    <string name="IB">Informacion</string>
+    -->
 </resources>
