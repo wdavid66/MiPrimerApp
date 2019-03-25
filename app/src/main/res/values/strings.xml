@@ -5,7 +5,9 @@
     <string name="btnGuardar">Guardar</string>
     <string name="btnAnterior">Regresar</string>
     <string name="etNombre2">Nombre</string>
-
+    <string name="btnBuscar">Buscar</string>
+<string name="edNombre">Nombre del Contacto</string>
+    <string name="mtDatosContacto">Datos del Contacto</string>
 
     <!--
     <string name="btnEnviar">Enviar</string>

@@ -20,7 +20,7 @@ import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText edEmail;
+    private EditText edNombre , mtDatosContacto;
     /*
     private EditText num1,num2 , et1;
     private TextView res ,tv1;
@@ -78,18 +78,39 @@ public class MainActivity extends AppCompatActivity {
          et1 = (EditText)findViewById(R.id.et1);
 */
 
-        edEmail = (EditText)findViewById(R.id.edEmail);
-        SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
-        edEmail.setText(preferences.getString("mail" , ""));
+        edNombre = (EditText)findViewById(R.id.edNombre);
+        mtDatosContacto = (EditText)findViewById(R.id.mtDatosContacto);
+
     }
     //Metodo para guardar
 
     public void guardar (View view){
-        SharedPreferences preferencias = getSharedPreferences("datos" , Context.MODE_PRIVATE);
+
+        String nombre = edNombre.getText().toString();
+        String datoscon = mtDatosContacto.getText().toString();
+
+
+        SharedPreferences preferencias = getSharedPreferences("agenda" , Context.MODE_PRIVATE);
         SharedPreferences.Editor Ob_editor = preferencias.edit();
-        Ob_editor.putString("mail", edEmail.getText().toString());
+        Ob_editor.putString(nombre , datoscon);
         Ob_editor.commit();
-        finish();
+
+        Toast.makeText(this,"Contacto Guardado" , Toast.LENGTH_SHORT).show();
+
+    }
+
+    //Metodo para Buscar
+
+    public void buscar(View view){
+        String nombre = edNombre.getText().toString();
+        SharedPreferences preferencias = getSharedPreferences("agenda" , Context.MODE_PRIVATE);
+        String datoscon = preferencias.getString(nombre , "");
+
+        if (datoscon.length() == 0){
+            Toast.makeText(this , "No hay Contacto" , Toast.LENGTH_LONG).show();
+        }else{
+            mtDatosContacto.setText(datoscon);
+        }
     }
 
     //Metodo Boton Enviar
